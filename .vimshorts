@@ -1,0 +1,11 @@
+
+# shortcuts for my Vim filelist
+
+lib/flor/worklist/
+lib/flor/worklist/migrations/
+spec/
+doc/
+
+# vimgreps are OK too, for example:
+#  / "concurrence" lib/
+
