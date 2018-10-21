@@ -5,13 +5,13 @@ Sequel.migration do
 
     create_table :flor_tasks do
 
-      primary_key :id, type: :Bignum
+      primary_key :id, type: :Integer
       String :domain, null: false
       String :exid, null: false
       String :nid, null: false
 
       File :content # JSON
-        # the task payload
+        # the task payload and more...
 
       String :ctime, null: false  # creation time
       String :mtime, null: false  # last modification time
@@ -34,10 +34,10 @@ Sequel.migration do
 
     create_table :flor_task_assignments do
 
-      primary_key :id, type: :Bignum
+      primary_key :id, type: :Integer
 
-      #Bignum :flor_task_id, null: false
-      foreign_key :flor_task_id, :flor_tasks, on_delete: :cascade
+      Integer :flor_task_id, null: false
+      #foreign_key :flor_task_id, :flor_tasks, on_delete: :cascade
 
       String :type, null: false  # "", "forced", "automatic", "escalated", ...
 
